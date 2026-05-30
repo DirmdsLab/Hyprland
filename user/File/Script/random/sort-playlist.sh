@@ -44,3 +44,16 @@ rm -f "$TEMP_FILE"
 
 echo "Sorted playlist created:"
 echo "$OUTPUT_FILE"
+
+#addon
+# Backup original playlist
+mv "$INPUT_FILE" "${INPUT_FILE}.bak"
+
+# Replace original playlist with sorted version
+mv "$OUTPUT_FILE" "$INPUT_FILE"
+
+echo "Original playlist backed up to:"
+echo "${INPUT_FILE}.bak"
+
+echo "Sorted playlist installed as:"
+echo "$INPUT_FILE"
