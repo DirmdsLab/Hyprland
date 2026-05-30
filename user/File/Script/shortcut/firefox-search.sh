@@ -17,4 +17,4 @@ else
 fi
 
 
-flatpak run org.mozilla.firefox "$url"
+firefox "$url"

@@ -69,8 +69,8 @@ fi
 
 # Step 6: Connect (forward/reverse)
 echo "Pilih metode koneksi:"
-echo "[0] Forward port (host -> device)"
-echo "[1] Reverse port (device -> host)"
+echo "[0] Forward port (device -> host)"
+echo "[1] Reverse port (host -> device)"
 read -p "Pilih opsi (0/1): " action
 
 if [ "$action" != "0" ] && [ "$action" != "1" ]; then
