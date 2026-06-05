@@ -135,3 +135,9 @@ hl.window_rule({
 
     float = true,
 })
+
+-- magic
+hl.workspace_rule({
+    workspace = "special:magic",
+    layout = "master",
+})

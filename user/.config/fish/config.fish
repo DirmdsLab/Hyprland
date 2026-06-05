@@ -158,7 +158,7 @@ if status is-interactive
             return 1
         end
 
-        hyprctl dispatch workspace $argv[1]
+        hyprctl dispatch "hl.dsp.focus({ workspace = $argv[1] })"
     end
 
     # Hyprlock
@@ -166,7 +166,7 @@ if status is-interactive
 
     # Float
     function Float-Setup
-        hyprctl dispatch workspace special:magic
+        hyprctl dispatch "hl.dsp.workspace.toggle_special('magic')"
 
         # Term1: clock
         kitty --class Term1 sh -c "tty-clock -c -C 6 -B; exec bash" >/dev/null 2>&1 &
@@ -182,8 +182,8 @@ if status is-interactive
         sleep 0.5
 
         # Resize Term1
-        hyprctl dispatch focuswindow 'class:^Term1$'
-        hyprctl dispatch resizeactive exact 50% 30%
+        hyprctl dispatch 'hl.dsp.focus({ window = "class:^Term1$" })'
+        hyprctl dispatch 'hl.dsp.window.resize({ x = 900, y = 300 })'
 
         sleep 0.5
 
