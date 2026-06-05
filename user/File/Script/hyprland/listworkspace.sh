@@ -40,4 +40,4 @@ choice=$(echo -n "$menu" | wofi --dmenu --prompt "Workspace/App")
 ws=$(echo "$choice" | cut -d: -f1 | cut -d- -f1)
 
 # switch to that workspace
-hyprctl dispatch workspace "$ws"
+hyprctl dispatch "hl.dsp.focus({ workspace = $ws })"

@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-
 ACTIVE_WIN=$(hyprctl activewindow -j)
 
 if [ -z "$ACTIVE_WIN" ] || [ "$ACTIVE_WIN" = "null" ]; then
@@ -10,6 +9,9 @@ fi
 
 WIN_CLASS=$(echo "$ACTIVE_WIN" | jq -r '.class')
 WIN_TITLE=$(echo "$ACTIVE_WIN" | jq -r '.title')
+
+WIN_CLASS_ESCAPED=$(printf '%s' "$WIN_CLASS" | sed 's/\\/\\\\/g; s/"/\\"/g')
+WIN_TITLE_ESCAPED=$(printf '%s' "$WIN_TITLE" | sed 's/\\/\\\\/g; s/"/\\"/g')
 
 echo "Window aktif:"
 echo "Class : $WIN_CLASS"
@@ -23,13 +25,15 @@ CHOICE=$(echo -e "$OPTIONS" | wofi --dmenu --prompt "Pilih opacity")
 
 TITLE_OPTION=$(echo -e "Class + Title\nClass saja" | wofi --dmenu --prompt "Target rule")
 
+[ -z "$TITLE_OPTION" ] && exit 0
+
 if [ "$TITLE_OPTION" = "Class + Title" ]; then
-    RULE="opacity $CHOICE, match:class $WIN_CLASS, match:title $WIN_TITLE"
+    LUA_RULE="hl.window_rule({match = {class = \"$WIN_CLASS_ESCAPED\", title = \"$WIN_TITLE_ESCAPED\"}, opacity = \"$CHOICE override\"})"
 else
-    RULE="opacity $CHOICE, match:class $WIN_CLASS"
+    LUA_RULE="hl.window_rule({match = {class = \"$WIN_CLASS_ESCAPED\"}, opacity = \"$CHOICE override\"})"
 fi
 
 echo "Apply rule:"
-echo "$RULE"
+echo "$LUA_RULE"
 
-hyprctl keyword windowrule "$RULE"
+hyprctl eval "$LUA_RULE"
