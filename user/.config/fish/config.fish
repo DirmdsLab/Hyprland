@@ -172,6 +172,10 @@ if status is-interactive
         kitty --class Term1 sh -c "tty-clock -c -C 6 -B; exec bash" >/dev/null 2>&1 &
         sleep 0.2
 
+        # if bug 
+        hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:magic", window = "class:^Term1$" })'
+        sleep 0.2
+
         # Term2: cava
         foot --app-id=Term2 sh -c "cava; exec bash" >/dev/null 2>&1 &
 

@@ -123,7 +123,7 @@ hl.window_rule({
     },
 
     no_blur = true,
-    opacity = 0.95,
+    opacity = 0.99,
 })
 
 -- Dialog Rename

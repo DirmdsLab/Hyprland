@@ -64,6 +64,9 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 hl.bind(mainMod .. " + CTRL + F",
     hl.dsp.exec_cmd(browser))
 
+hl.bind(mainMod .. " + CTRL + SHIFT + F",
+    hl.dsp.exec_cmd("~/File/Script/shortcut/firefox-search.sh"))
+
 -- G keybind
 
 
