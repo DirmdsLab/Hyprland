@@ -3,7 +3,10 @@ hl.on("hyprland.start", function ()
 
   -- Hyprpolkit
   hl.exec_cmd("systemctl --user start hyprpolkitagent")
-  
+
+  -- hypridle
+  hl.exec_cmd("hypridle")
+
   -- Mako
   hl.exec_cmd("mako")
 

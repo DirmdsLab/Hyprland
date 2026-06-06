@@ -7,8 +7,12 @@ local mainMod    = "SUPER"
 local terminal    = "kitty"
 local fileManager = "thunar"
 local browser     = "firefox"
-local lockscreen  = "hyprlock"
+
+local lockscreen  = "~/File/Script/hyprland/hyprlock/hyprlock-script.sh"
+local lockidle    = "~/File/Script/hyprland/hyprlock/hyprlock-idle.sh"
+
 local menu        = "wofi --show drun --insensitive"
+local code        = "codium"
 
 -- A keybind
 
@@ -22,7 +26,8 @@ hl.bind(mainMod .. " + SHIFT + A",hl.dsp.exec_cmd("~/File/Script/audio/vol.sh mu
 
 
 -- C keybind
-
+-- codium
+hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(code))
 
 -- D keybind
 
@@ -86,6 +91,7 @@ hl.bind(mainMod .. " + CTRL + SHIFT + F",
 
 -- Lockscreen
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lockscreen))
+hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd(lockidle))
 
 -- M keybind
 
@@ -158,10 +164,10 @@ hl.bind(mainMod .. " + CTRL + W",
 
 -- X keybind
 -- Float
-hl.bind(mainMod .. " + X", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + CTRL + X", hl.dsp.window.float({ action = "toggle" }))
 
 -- Special temp
-hl.bind(mainMod .. " + CTRL + X", hl.dsp.workspace.toggle_special("temp"))
+hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("temp"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:temp" }))
 
 

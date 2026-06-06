@@ -187,7 +187,7 @@ if status is-interactive
 
         # Resize Term1
         hyprctl dispatch 'hl.dsp.focus({ window = "class:^Term1$" })'
-        hyprctl dispatch 'hl.dsp.window.resize({ x = 900, y = 300 })'
+        hyprctl dispatch 'hl.dsp.window.resize({ x = 1000, y = 300 })'
 
         sleep 0.5
 

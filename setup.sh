@@ -196,6 +196,9 @@ first_setup_only() {
     run tar -xf "$ROOT_DIR/external/themes/icon/01-Colloid.tar.xz" -C "$ROOT_DIR/external/themes/icon/01-Colloid"
     run cp -r $ROOT_DIR/external/themes/icon/01-Colloid/* "$HOME/.icons"
 
+    # font 
+    run fc-cache -fv
+
     # To apply themes
     run echo "Run 'nwg-look' to apply themes"
 

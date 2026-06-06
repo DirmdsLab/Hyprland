@@ -7,14 +7,18 @@ FILE="$SCREENSHOT_DIR/Screenshot-$(date +'%Y-%m-%d-%H%M%S').png"
 
 case "$1" in
     fullss)
-        if grim "$FILE"; then
+        if grim "$FILE" && [[ -s "$FILE" ]]; then
             notify-send "Screenshot Saved" "$(basename "$FILE")"
+        else
+            notify-send "Screenshot Failed"
         fi
         ;;
 
     cropss)
-        if grim -g "$(slurp)" "$FILE"; then
+        if grim -g "$(slurp)" "$FILE" && [[ -s "$FILE" ]]; then
             notify-send "Screenshot Saved" "$(basename "$FILE")"
+        else
+            notify-send "Screenshot Failed"
         fi
         ;;
 

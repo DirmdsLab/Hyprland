@@ -64,6 +64,22 @@ hl.window_rule({
     border_size = 0,
 })
 
+
+-- workspace 21 hyprlock
+hl.workspace_rule({
+    workspace = "21",
+    gaps_in = 0,
+    gaps_out = 0,
+})
+
+hl.window_rule({
+    match = {
+        workspace = "21",
+    },
+    rounding = 0,
+    border_size = 0,
+})
+
 -- mpv
 hl.window_rule({
     match = {
@@ -140,4 +156,47 @@ hl.window_rule({
 hl.workspace_rule({
     workspace = "special:magic",
     layout = "master",
+})
+
+hl.window_rule({
+    name = "magic-float-all",
+    match = {
+        workspace = "special:magic",
+    },
+
+    float = true,
+})
+
+hl.window_rule({
+    name = "magic-tile-exceptions",
+    match = {
+        workspace = "special:magic",
+        class = "Term[1-3]", 
+    },
+    tile = true,
+})
+
+
+-- kitty-audio
+hl.window_rule({
+    match = {
+        class = "kitty-audio",
+    },
+
+    no_blur = true,
+    opacity = 0.3,
+})
+
+-- kitty-overlay
+hl.window_rule({
+    match = {
+        class = "kitty-overlay",
+    },
+
+    float = true,
+    no_blur = true,
+    opacity = 1,
+
+    size = { "monitor_w*1", "monitor_h*1" },
+    move = { 0, 0 },
 })
