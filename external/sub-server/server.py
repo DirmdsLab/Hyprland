@@ -4,6 +4,16 @@ import time
 
 app = Flask(__name__)
 
+
+# ==========================================================
+# API 0 - HEALTH
+# ==========================================================
+@app.route("/health", methods=["GET"])
+def health():
+    return jsonify({
+        "status": "ok"
+    })
+
 # ==========================================================
 # TRANSLATE FUNCTION (dipakai semua endpoint)
 # ==========================================================
@@ -95,6 +105,8 @@ def translate_sub():
     return Response(vtt, mimetype="text/vtt")
 
 
+
+
 # ==========================================================
 # MAIN
 # ==========================================================
@@ -107,6 +119,7 @@ if __name__ == "__main__":
     print("Endpoints:")
     print(" - /translate")
     print(" - /translate_sub")
+    print(" - /health")
     print("====================================\n")
 
     app.run(host="0.0.0.0", port=5010, debug=False)
