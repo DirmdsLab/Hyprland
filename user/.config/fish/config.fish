@@ -13,6 +13,7 @@ if status is-interactive
     alias FishConfig='nano ~/.config/fish/config.fish'
 
     # Script
+    alias Script-Files='cd ~/File/Script; eza -T'
     alias Random-Script='cd ~/File/Script/random; eza -T'
 
     # Bios
