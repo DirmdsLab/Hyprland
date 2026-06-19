@@ -93,11 +93,14 @@ always_run() {
     run ln -sf "$ROOT_DIR/user/.config/mako" "$HOME/.config/mako"
 
     # mpv
-    run mkdir -p "$ROOT_DIR/user/.config/mpv"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/scripts" "$ROOT_DIR/user/.config/mpv/scripts"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/shaders" "$ROOT_DIR/user/.config/mpv/shaders"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/mpv.conf" "$ROOT_DIR/user/.config/mpv/mpv.conf"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/input.conf" "$ROOT_DIR/user/.config/mpv/input.conf"
+    run rm -rf "$HOME/.config/mpv"
+    run mkdir -p "$HOME/.config/mpv"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/scripts" "$HOME/.config/mpv/scripts"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/shaders" "$HOME/.config/mpv/shaders"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/mpv.conf" "$HOME/.config/mpv/mpv.conf"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/input.conf" "$HOME/.config/mpv/input.conf"
+
+    run ln -s "$HOME/Playlists" "$HOME/.config/mpv/playlists"
 
     # fastfetch
     run rm -rf "$HOME/.config/fastfetch"
