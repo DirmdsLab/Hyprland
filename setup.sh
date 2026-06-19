@@ -102,6 +102,10 @@ always_run() {
 
     run ln -s "$HOME/Playlists" "$HOME/.config/mpv/playlists"
 
+    # MangoHud
+    run rm -rf "$HOME/.config/MangoHud"
+    run ln -sf "$ROOT_DIR/user/.config/MangoHud" "$HOME/.config/MangoHud"
+
     # fastfetch
     run rm -rf "$HOME/.config/fastfetch"
     run ln -sf "$ROOT_DIR/user/.config/fastfetch" "$HOME/.config/fastfetch"
