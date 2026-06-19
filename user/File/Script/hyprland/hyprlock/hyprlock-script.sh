@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 PID_FILE="/tmp/wallpaper.pid"
-MONITOR="DP-1"
+MONITOR="HDMI-A-2"
 VIDEO_DIR="$HOME/Videos/Wallpaper"
 
 # Cek apakah dipanggil dengan argumen

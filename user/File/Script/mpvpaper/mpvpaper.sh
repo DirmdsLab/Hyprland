@@ -4,7 +4,7 @@
 PLAYLIST_DIR="$HOME/Playlists"
 VIDEO_DIR="$HOME/Videos/Wallpaper"
 SOCKET_PATH="/tmp/mpv-socket"
-OUTPUT_NAME="DP-1"
+OUTPUT_NAME="HDMI-A-2"
 
 # Base mpv options
 BASE_OPTS="--no-config --vf=scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080 volume=70 input-ipc-server=$SOCKET_PATH"

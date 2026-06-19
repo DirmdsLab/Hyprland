@@ -93,10 +93,11 @@ always_run() {
     run ln -sf "$ROOT_DIR/user/.config/mako" "$HOME/.config/mako"
 
     # mpv
-    run rm -f "$ROOT_DIR/user/.config/mpv/playlists"
-    run ln -s "$HOME/Playlists" "$ROOT_DIR/user/.config/mpv/playlists"
-    run rm -rf "$HOME/.config/mpv"
-    run ln -sf "$ROOT_DIR/user/.config/mpv" "$HOME/.config/mpv"
+    run mkdir -p "$ROOT_DIR/user/.config/mpv"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/scripts" "$ROOT_DIR/user/.config/mpv/scripts"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/shaders" "$ROOT_DIR/user/.config/mpv/shaders"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/mpv.conf" "$ROOT_DIR/user/.config/mpv/mpv.conf"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/input.conf" "$ROOT_DIR/user/.config/mpv/input.conf"
 
     # fastfetch
     run rm -rf "$HOME/.config/fastfetch"
@@ -165,13 +166,6 @@ first_setup_only() {
     run rm -rf "$ROOT_DIR/external/tmux/tmux-main"
     run unzip "$ROOT_DIR/external/tmux/catppuccin-tmux.zip" -d "$ROOT_DIR/external/tmux/"
     run mv "$ROOT_DIR/external/tmux/tmux-main" "$HOME/.config/tmux/plugins/catppuccin/tmux"
-
-    # Mpv shaders
-    run rm -rf external/mpv/GLSL_Mac_Linux_High-end
-    run mkdir -p external/mpv/GLSL_Mac_Linux_High-end
-    run unzip "$ROOT_DIR/external/mpv/GLSL_Mac_Linux_High-end.zip" -d "external/mpv/GLSL_Mac_Linux_High-end"
-    run rm -rf "$ROOT_DIR/user/.config/mpv/shaders"
-    run mv "$ROOT_DIR/external/mpv/GLSL_Mac_Linux_High-end/shaders" "$ROOT_DIR/user/.config/mpv/"
 
     # themes
 
