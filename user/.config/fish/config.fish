@@ -245,6 +245,31 @@ if status is-interactive
     
     alias key-input='~/File/Script/random/key.sh'
 
+    # Trans
+    function instan-trans
+        if test (count $argv) -lt 2
+            echo "Usage:"
+            echo "  instan-trans en <text>"
+            echo "  instan-trans id <text>"
+            return 1
+        end
+
+        set -l direction $argv[1]
+        set -e argv[1]
+        set -l text (string join " " $argv)
+
+        switch $direction
+            case en
+                trans -b en:id "$text"
+            case id
+                trans -b id:en "$text"
+            case '*'
+                echo "Invalid direction: $direction"
+                echo "Use 'en' or 'id'"
+                return 1
+        end
+    end
+
     # Cli
     function launch_cli_art
         set tty (tty)
