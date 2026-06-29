@@ -29,6 +29,16 @@ if status is-interactive
     alias VolUp='$HOME/File/Script/audio/vol.sh up'
     alias VolDown='$HOME/File/Script/audio/vol.sh down'
 
+    # cdp
+    function cdp --description "cd ke physical path (realpath)"
+        if test (count $argv) -eq 0
+            echo "Usage: cdp <path>"
+            return 1
+        end
+    
+        builtin cd (realpath -- "$argv[1]")
+    end
+
     # Tmux 
     function new-attach
         if test (count $argv) -eq 0

@@ -84,6 +84,10 @@ always_run() {
     run rm -rf "$HOME/.config/hypr"
     run ln -sf "$ROOT_DIR/user/.config/hypr" "$HOME/.config/hypr"
 
+    # Thunar
+    run rm -rf "$HOME/.config/Thunar"
+    run ln -sf "$ROOT_DIR/user/.config/Thunar" "$HOME/.config/Thunar"
+
     # Kitty
     run rm -rf "$HOME/.config/kitty"
     run ln -sf "$ROOT_DIR/user/.config/kitty" "$HOME/.config/kitty"

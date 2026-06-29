@@ -19,6 +19,8 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
+text/x-scheme=userapp-nano-kitty.sh-BX6WR3.desktop
+application/xml=userapp-nano-kitty.sh-BX6WR3.desktop
 
 [Added Associations]
 video/webm=mpv.desktop;mpv-tmux.desktop;
@@ -45,3 +47,5 @@ application/x-extension-shtml=firefox.desktop;
 application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
+text/x-scheme=userapp-nano-kitty.sh-BX6WR3.desktop;
+application/xml=userapp-nano-kitty.sh-BX6WR3.desktop;
