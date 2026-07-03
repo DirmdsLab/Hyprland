@@ -10,7 +10,7 @@ if [[ "$1" == "videopath" && -n "$2" ]]; then
     SKIP_EFFECTS=true
 else
 # Cari semua file video di folder
-mapfile -t FILES < <(find -L "$VIDEO_DIR" -type f \( -iname "*.mp4" -o -iname "*.mkv" -o -iname "*.webm" \) -printf '%T@ %p\n' \
+mapfile -t FILES < <(find -L "$VIDEO_DIR" -type f \( -iname "*.mp4" -o -iname "*.mkv" -o -iname "*.webm" -o -iname "*.m3u" \) -printf '%T@ %p\n' \
     | sort -nr | cut -d' ' -f2-)
 
 # Buat daftar untuk wofi: hanya nama file + icon 🎬
@@ -41,7 +41,7 @@ fi
 # Kalau tidak memilih apa pun, keluar
 [ -z "$VIDEO" ] && exit 0
 
-MPV_OPTS='--title=mpvpaperhyprlock volume=100 --loop-playlist shuffle --vf=scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080'
+MPV_OPTS='--title=mpvpaperhyprlock volume=100 --loop --loop-playlist shuffle --vf=scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080'
 
 
 

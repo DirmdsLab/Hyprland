@@ -18,14 +18,14 @@ choose_media_file() {
 
     while true; do
         
-        mapfile -t folders < <(find "$current_dir" -mindepth 1 -maxdepth 1 -type d \
+        mapfile -t folders < <(find -L "$current_dir" -mindepth 1 -maxdepth 1 -type d \
             -printf "%T@ %f/\n" | sort -rn | cut -d' ' -f2-)
 
         if [[ "$mode" == "playlist" ]]; then
-            mapfile -t files < <(find "$current_dir" -mindepth 1 -maxdepth 1 \( -type f -o -type l \) -iname "*.m3u" \
+            mapfile -t files < <(find -L "$current_dir" -mindepth 1 -maxdepth 1 \( -type f -o -type l \) -iname "*.m3u" \
   	    -printf "%T@ %f\n" | sort -rn | cut -d' ' -f2-)
         else
-            mapfile -t files < <(find "$current_dir" -mindepth 1 -maxdepth 1 -type f \
+            mapfile -t files < <(find -L "$current_dir" -mindepth 1 -maxdepth 1 -type f \
                 \( -iname "*.mp4" -o -iname "*.mkv" -o -iname "*.webm" -o -iname "*.avi" -o -iname "*.mov" \) \
                 -printf "%T@ %f\n" | sort -rn | cut -d' ' -f2-)
         fi
