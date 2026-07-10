@@ -34,3 +34,21 @@ bar? my quickshell still hello world :v
 ![preview](preview/preview.png)
 ### Codium
 ![preview](preview/preview_vscode.png)
+
+## Clone Repository
+
+Clone the repository together with its submodules:
+
+```bash
+git clone https://github.com/DirmdsLab/Hyprland.git
+cd Hyprland
+git submodule update --init --recursive
+```
+
+## Update Submodules
+
+To update all submodules to the latest commits from their configured remote branches:
+
+```bash
+git submodule update --init --remote --recursive
+```

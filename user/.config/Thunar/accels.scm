@@ -34,6 +34,7 @@
 ; (gtk_accel_path "<Actions>/ThunarBookmarks/e380e62ee255213ef9b5a13c31589c53" "")
 ; (gtk_accel_path "<Actions>/ThunarStandardView/select-by-pattern" "<Primary>s")
 ; (gtk_accel_path "<Actions>/ThunarWindow/zoom-out-alt" "<Primary>KP_Subtract")
+; (gtk_accel_path "<Actions>/ThunarBookmarks/e04f45079902e05e925831fc3f884d2b" "")
 ; (gtk_accel_path "<Actions>/ThunarWindow/open-file-menu" "F10")
 ; (gtk_accel_path "<Actions>/ThunarWindow/contents" "F1")
 ; (gtk_accel_path "<Actions>/ThunarWindow/show-highlight" "")
