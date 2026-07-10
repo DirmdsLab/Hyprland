@@ -118,7 +118,17 @@ hl.window_rule({
         class = "firefox",
     },
 
-    opacity = 0.97,
+    opacity = 0.95,
+})
+
+-- firefox youtube
+hl.window_rule({
+    match = {
+        class = "firefox",
+        title = ".*YouTube.*",
+    },
+
+    opacity = 1,
 })
 
 -- btop

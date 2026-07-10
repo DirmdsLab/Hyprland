@@ -31,6 +31,10 @@ hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(code))
 
 -- D keybind
 
+-- Special workspace
+hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("Hmph"))
+hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "special:Hmph" }))
+
 -- MPVPaper (Wallpaper)
 hl.bind(mainMod .. " + CTRL + SHIFT + D",
     hl.dsp.exec_cmd("~/File/Script/mpvpaper/mpvpaper.sh"))
@@ -86,7 +90,9 @@ hl.bind(mainMod .. " + CTRL + SHIFT + F",
 
 -- K keybind
 
-
+-- Temp
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
 -- L keybind
 
 -- Lockscreen
