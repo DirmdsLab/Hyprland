@@ -210,3 +210,12 @@ hl.window_rule({
     size = { "monitor_w*1", "monitor_h*1" },
     move = { 0, 0 },
 })
+
+-- scrcpy
+hl.window_rule({
+    match = {
+        class = ".scrcpy-wrapped",
+    },
+
+    workspace = 12,
+})

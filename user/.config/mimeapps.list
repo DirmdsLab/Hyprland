@@ -23,6 +23,7 @@ text/x-scheme=userapp-nano-kitty.sh-BX6WR3.desktop
 application/xml=userapp-nano-kitty.sh-BX6WR3.desktop
 application/x-shellscript=userapp-nano-kitty.sh-BX6WR3.desktop
 application/x-desktop=userapp-nano-kitty.sh-BX6WR3.desktop
+application/x-zerosize=userapp-nano-kitty.sh-BX6WR3.desktop
 
 [Added Associations]
 video/webm=mpv.desktop;mpv-tmux.desktop;
@@ -30,7 +31,7 @@ image/png=org.mozilla.firefox.desktop;kitty-open.desktop;org.gnome.Loupe.desktop
 application/x-desktop=nvim.desktop;userapp-nano-kitty.sh-BX6WR3.desktop;
 text/plain=userapp-nano-kitty-1AYAM3.desktop;nvim.desktop;kitty-open.desktop;userapp-nano-kitty-L78IM3.desktop;userapp-nano-kitty-WBSNO3.desktop;userapp-nano-kitty.sh-IABIR3.desktop;userapp-nano-kitty.sh-BX6WR3.desktop;
 video/x-matroska=anime.desktop;mpv-tmux.desktop;
-application/x-zerosize=nvim.desktop;
+application/x-zerosize=nvim.desktop;userapp-nano-kitty.sh-BX6WR3.desktop;
 application/json=nvim.desktop;
 image/webp=kitty-open.desktop;
 image/jpeg=org.gnome.Loupe.desktop;org.mozilla.firefox.desktop;
