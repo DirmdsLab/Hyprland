@@ -175,7 +175,7 @@ first_setup_only() {
     run rm -rf "$HOME/.config/tmux"
     run mkdir -p "$HOME/.config/tmux/plugins/catppuccin/"
     run rm -rf "$ROOT_DIR/external/tmux/tmux-main"
-    run unzip "$ROOT_DIR/external/tmux/catppuccin-tmux.zip" -d "$ROOT_DIR/external/tmux/"
+    run 7z x "$ROOT_DIR/external/tmux/catppuccin-tmux.zip" -o"$ROOT_DIR/external/tmux/" -aoa
     run mv "$ROOT_DIR/external/tmux/tmux-main" "$HOME/.config/tmux/plugins/catppuccin/tmux"
 
     # themes
