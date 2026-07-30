@@ -24,6 +24,8 @@ application/xml=userapp-nano-kitty.sh-BX6WR3.desktop
 application/x-shellscript=userapp-nano-kitty.sh-BX6WR3.desktop
 application/x-desktop=userapp-nano-kitty.sh-BX6WR3.desktop
 application/x-zerosize=userapp-nano-kitty.sh-BX6WR3.desktop
+application/zip=userapp-archive-kitty.sh-YZ47S3.desktop
+application/x-7z-compressed=userapp-archive-kitty.sh-YZ47S3.desktop
 
 [Added Associations]
 video/webm=mpv.desktop;mpv-tmux.desktop;
@@ -52,3 +54,5 @@ application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 text/x-scheme=userapp-nano-kitty.sh-BX6WR3.desktop;
 application/xml=userapp-nano-kitty.sh-BX6WR3.desktop;
+application/zip=peazip-extract.desktop;org.gnome.FileRoller.desktop;peazip.desktop;userapp-archive-kitty.sh-YZ47S3.desktop;
+application/x-7z-compressed=userapp-archive-kitty.sh-YZ47S3.desktop;

@@ -25,3 +25,6 @@ external/sub-server/Engine
 # Random
 user/File/Script/random/git/sshkey.log
 
+# tmux
+external/tmux/tmux-main
+
