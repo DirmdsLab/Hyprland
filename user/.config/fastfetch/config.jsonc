@@ -23,10 +23,29 @@
     "gpu",
     "memory",
     "swap",
-    "disk",
     "localip",
     "battery",
     "poweradapter",
-    "break"
+    {
+      "type": "disk",
+      "key": "Root",
+      "folders": "/"
+    },
+    {
+      "type": "disk",
+      "key": "HDD",
+      "folders": "/home/tutturuu/File/Software/Storage/HDD/hddex"
+    },
+    {
+      "type": "disk",
+      "key": "SSD",
+      "folders": "/home/tutturuu/File/Software/Storage/SSD/ssdin"
+    },
+    {
+      "type": "disk",
+      "key": "SFTP",
+      "folders": "/home/tutturuu/File/Software/Storage/NetworkStorage/SFTP"
+    },
+    "break",
   ]
 }
