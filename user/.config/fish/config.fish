@@ -180,7 +180,7 @@ if status is-interactive
         hyprctl dispatch "hl.dsp.workspace.toggle_special('magic')"
 
         # Term1: clock
-        kitty --class Term1 sh -c "tty-clock -c -C 6 -B; exec bash" >/dev/null 2>&1 &
+        kitty --class Term1 sh -c "peaclock; exec bash" >/dev/null 2>&1 &
         sleep 0.2
 
         # if bug 
