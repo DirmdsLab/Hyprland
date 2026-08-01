@@ -41,7 +41,7 @@ fi
 # Kalau tidak memilih apa pun, keluar
 [ -z "$VIDEO" ] && exit 0
 
-MPV_OPTS='--title=mpvpaperhyprlock volume=100 --loop --loop-playlist shuffle --vf=scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080'
+MPV_OPTS='--title=mpvpaperhyprlock --no-config volume=100 --loop --loop-playlist shuffle --vf=scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080'
 
 
 
