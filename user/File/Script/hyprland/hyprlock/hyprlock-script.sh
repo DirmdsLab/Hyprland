@@ -17,7 +17,7 @@ mapfile -t FILES < <(find -L "$VIDEO_DIR" -type f \( -iname "*.mp4" -o -iname "*
 MENU=$(for f in "${FILES[@]}"; do
     name=$(basename "$f")
     echo "🎬 $name"
-done | wofi --dmenu --prompt "Pilih Video Wallpaper:")
+done | wofi --dmenu --insensitive --prompt "Pilih Video Wallpaper:")
 
 # Kalau tidak memilih apa pun, keluar
 [ -z "$MENU" ] && exit 0
@@ -88,12 +88,6 @@ echo "$PID" > "$PID_FILE"
 sleep 0.5
 echo '{ "command": ["set_property", "saturation", 70] }' | socat - /tmp/mpvlock-socket
 
-
-if [ "$NO_AUDIO_VISUAL" != true ]; then
-    kitty --class kitty-audio --config "$HOME/File/Script/kitty/kitty-transparant.conf" -e cava -p "$HOME/File/Script/audio/cava/default-config" &
-    KITTY_AUDIO_PID=$!
-fi
-
 sleep 0.5
 
 kitty --class kitty-overlay \
@@ -114,6 +108,17 @@ kitty --class kitty-overlay \
 
 
 KITTY_OVERLAY_PID=$!
+
+sleep 0.5
+
+hyprctl dispatch 'hl.dsp.focus({ window = "class:kitty-overlay" })'
+
+sleep 0.5
+
+if [ "$NO_AUDIO_VISUAL" != true ]; then
+    kitty --class kitty-audio --config "$HOME/File/Script/kitty/kitty-transparant.conf" -e cava -p "$HOME/File/Script/audio/cava/default-config" &
+    KITTY_AUDIO_PID=$!
+fi
 
 stdbuf -oL -eL hyprlock >> /tmp/lockscreenstyle.log 2>&1 &
 

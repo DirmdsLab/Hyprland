@@ -203,7 +203,7 @@ if status is-interactive
         sleep 0.5
 
         # Mouse
-        ydotool mousemove --absolute 100 100
+        hyprctl dispatch 'hl.dsp.focus({ window = "class:Term3" })'
     end
 
 
@@ -231,17 +231,6 @@ if status is-interactive
         end
 
         command fastfetch $argv
-    end
-
-    # ydotool
-    function key-type
-        if test (count $argv) -eq 0
-            echo "Usage: key-type <teks>"
-            return 1
-        end
-
-        echo "[ydotool] typing teks: $argv"
-        ydotool type "$argv"
     end
     
     function y

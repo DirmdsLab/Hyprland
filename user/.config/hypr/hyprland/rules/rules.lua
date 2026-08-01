@@ -195,6 +195,9 @@ hl.window_rule({
 
     no_blur = true,
     opacity = 0.3,
+
+    workspace = 21,
+
 })
 
 -- kitty-overlay
@@ -209,6 +212,9 @@ hl.window_rule({
 
     size = { "monitor_w*1", "monitor_h*1" },
     move = { 0, 0 },
+
+    workspace = 21,
+
 })
 
 -- scrcpy
