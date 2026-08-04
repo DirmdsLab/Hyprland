@@ -242,6 +242,17 @@ if status is-interactive
     	rm -f -- "$tmp"
     end
     
+    # ydotool
+    function key-type
+        if test (count $argv) -eq 0
+            echo "Usage: key-type <teks>"
+            return 1
+        end
+
+        echo "[ydotool] typing teks: $argv"
+        ydotool type "$argv"
+    end
+
     alias key-input='~/File/Script/random/key.sh'
 
     # Trans
