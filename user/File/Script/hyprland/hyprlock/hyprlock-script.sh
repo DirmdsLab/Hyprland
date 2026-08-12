@@ -64,11 +64,11 @@ if [ -f "$PID_FILE" ]; then
     fi
 fi
 
-
-hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:magic" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl dispatch togglespecialworkspace magic
-hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:temp" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl dispatch togglespecialworkspace temp
-hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:UwU" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl dispatch togglespecialworkspace UwU
-hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:sysmon" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl dispatch togglespecialworkspace sysmon
+hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:magic" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("magic"))' 
+hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:temp" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("temp"))' 
+hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:UwU" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("UwU"))' 
+hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:Hmph" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("Hmph"))' 
+hyprctl monitors -j | jq -e '.[] | select(.specialWorkspace.name=="special:sysmon" and .specialWorkspace.id!=-1)' >/dev/null && hyprctl eval 'hl.dispatch(hl.dsp.workspace.toggle_special("sysmon"))' 
 
 
 sleep 0.5
