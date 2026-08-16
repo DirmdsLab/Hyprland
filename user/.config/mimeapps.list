@@ -26,6 +26,7 @@ application/x-desktop=userapp-nano-kitty.sh-BX6WR3.desktop
 application/x-zerosize=userapp-nano-kitty.sh-BX6WR3.desktop
 application/zip=userapp-archive-kitty.sh-YZ47S3.desktop
 application/x-7z-compressed=userapp-archive-kitty.sh-YZ47S3.desktop
+application/octet-stream=userapp-nano-kitty.sh-BX6WR3.desktop
 
 [Added Associations]
 video/webm=mpv.desktop;mpv-tmux.desktop;
@@ -37,7 +38,7 @@ application/x-zerosize=nvim.desktop;userapp-nano-kitty.sh-BX6WR3.desktop;
 application/json=nvim.desktop;
 image/webp=org.gnome.Loupe.desktop;kitty-open.desktop;
 image/jpeg=org.gnome.Loupe.desktop;org.mozilla.firefox.desktop;
-audio/x-mpegurl=mpv-tmux.desktop;kitty-open.desktop;userapp-nano-kitty-WBSNO3.desktop;userapp-nano-kitty-L78IM3.desktop;mpv.desktop;nvim.desktop;userapp-nano-kitty.sh-IABIR3.desktop;
+audio/x-mpegurl=userapp-nano-kitty.sh-BX6WR3.desktop;mpv-tmux.desktop;kitty-open.desktop;userapp-nano-kitty-WBSNO3.desktop;userapp-nano-kitty-L78IM3.desktop;mpv.desktop;nvim.desktop;userapp-nano-kitty.sh-IABIR3.desktop;
 application/x-shellscript=userapp-nano-kitty.sh-IABIR3.desktop;userapp-nano-kitty-L78IM3.desktop;nvim.desktop;userapp-nano-kitty.sh-BX6WR3.desktop;
 image/gif=org.gnome.Loupe.desktop;
 application/x-kdenlive=userapp-nano-kitty-L78IM3.desktop;
@@ -56,3 +57,4 @@ text/x-scheme=userapp-nano-kitty.sh-BX6WR3.desktop;
 application/xml=userapp-nano-kitty.sh-BX6WR3.desktop;
 application/zip=peazip-extract.desktop;org.gnome.FileRoller.desktop;peazip.desktop;userapp-archive-kitty.sh-YZ47S3.desktop;
 application/x-7z-compressed=userapp-archive-kitty.sh-YZ47S3.desktop;
+application/octet-stream=userapp-nano-kitty.sh-BX6WR3.desktop;
