@@ -84,6 +84,10 @@ always_run() {
     run rm -rf "$HOME/.config/hypr"
     run ln -sf "$ROOT_DIR/user/.config/hypr" "$HOME/.config/hypr"
 
+    # hyprland app
+    run rm -rf "$HOME/File/Software/App/hyprland"
+    run ln -sf "$ROOT_DIR/user/File/Software/App/hyprland" "$HOME/File/Software/App/hyprland"
+
     # Thunar
     run rm -rf "$HOME/.config/Thunar"
     run ln -sf "$ROOT_DIR/user/.config/Thunar" "$HOME/.config/Thunar"
@@ -91,6 +95,10 @@ always_run() {
     # Kitty
     run rm -rf "$HOME/.config/kitty"
     run ln -sf "$ROOT_DIR/user/.config/kitty" "$HOME/.config/kitty"
+
+    # kitty app
+    run rm -rf "$HOME/File/Software/App/kitty"
+    run ln -sf "$ROOT_DIR/user/File/Software/App/kitty" "$HOME/File/Software/App/kitty"
 
     # kitty-audio
     run rm -rf "$HOME/File/Software/App/cava"
