@@ -92,6 +92,10 @@ always_run() {
     run rm -rf "$HOME/.config/kitty"
     run ln -sf "$ROOT_DIR/user/.config/kitty" "$HOME/.config/kitty"
 
+    # kitty-audio
+    run rm -rf "$HOME/File/Software/App/cava"
+    run ln -sf "$ROOT_DIR/user/File/Software/App/cava" "$HOME/File/Software/App/cava"
+
     # mako
     run rm -rf "$HOME/.config/mako"
     run ln -sf "$ROOT_DIR/user/.config/mako" "$HOME/.config/mako"

@@ -116,7 +116,7 @@ hyprctl dispatch 'hl.dsp.focus({ window = "class:kitty-overlay" })'
 sleep 0.5
 
 if [ "$NO_AUDIO_VISUAL" != true ]; then
-    kitty --class kitty-audio --config "$HOME/File/Script/kitty/kitty-transparant.conf" -e cava -p "$HOME/File/Script/audio/cava/default-config" &
+    kitty --class kitty-audio --config "$HOME/File/Script/kitty/kitty-transparant.conf" -e cava -p "$HOME/File/Software/App/cava/kitty-audio-config" &
     KITTY_AUDIO_PID=$!
 fi
 
