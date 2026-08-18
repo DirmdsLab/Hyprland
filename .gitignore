@@ -10,6 +10,8 @@ user/.config/mpv
 
 # External Repo
 
+external/DirmdsLab/*
+
 # Mpv
 external/mpv/GLSL_Mac_Linux_High-end
 

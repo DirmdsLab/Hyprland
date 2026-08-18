@@ -109,13 +109,9 @@ always_run() {
     run ln -sf "$ROOT_DIR/user/.config/mako" "$HOME/.config/mako"
 
     # mpv
-    run rm -rf "$HOME/.config/mpv"
-    run mkdir -p "$HOME/.config/mpv"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/scripts" "$HOME/.config/mpv/scripts"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/shaders" "$HOME/.config/mpv/shaders"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/mpv.conf" "$HOME/.config/mpv/mpv.conf"
-    run ln -sf "$ROOT_DIR/external/DirmdsLab/mpv-setup/conf/linux/input.conf" "$HOME/.config/mpv/input.conf"
-
+    run chmod +x "$ROOT_DIR/external/DirmdsLab/mpv-setup/linux_setup.sh"
+    run bash -c 'cd "$1" && ./linux_setup.sh' _ "$ROOT_DIR/external/DirmdsLab/mpv-setup"
+    
     run ln -s "$HOME/Playlists" "$HOME/.config/mpv/playlists"
 
     # MangoHud
@@ -144,7 +140,7 @@ always_run() {
 
     # Script
     run rm -rf "$HOME/File/Script"
-    run ln -sf "$ROOT_DIR/user/File/Script" "$HOME/File/Script"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/Script/linux" "$HOME/File/Script"
 
     log "=== ALWAYS RUN TASKS END ==="
 }
@@ -153,32 +149,55 @@ always_run() {
 # First Setup Only Tasks
 # =========================
 first_setup_only() {
+
+    # clone 
+    # external repo
+    log "clone external repo"
+    
+    # DirmdsLab Repo
+    run mkdir -p "$ROOT_DIR/external/DirmdsLab"
+    
+    clone_if_missing() {
+        local repo_url="$1"
+        local repo_dir="$2"
+    
+        if [[ -d "$repo_dir/.git" ]]; then
+            log "skip: $repo_dir already exists"
+            return 0
+        fi
+    
+        if [[ -d "$repo_dir" ]]; then
+            log "skip: $repo_dir already exists (not a git repo)"
+            return 0
+        fi
+    
+        run git clone "$repo_url" "$repo_dir"
+    }
+    
+    # Art
+    clone_if_missing \
+        "https://github.com/DirmdsLab/Art.git" \
+        "$ROOT_DIR/external/DirmdsLab/Art"
+    
+    # Script
+    clone_if_missing \
+        "https://github.com/DirmdsLab/Script.git" \
+        "$ROOT_DIR/external/DirmdsLab/Script"
+    
+    # Hyprland
+    clone_if_missing \
+        "https://github.com/DirmdsLab/Hyprland.git" \
+        "$ROOT_DIR/external/DirmdsLab/Hyprland"
+
+    clone_if_missing \
+        "https://github.com/DirmdsLab/mpv-setup.git" \
+        "$ROOT_DIR/external/DirmdsLab/mpv-setup"
+
     log "=== FIRST SETUP TASKS START ==="
 
     # Home Folder
-    run mkdir -p "$HOME/.config"
-    run mkdir -p "$HOME/.local"
-    run mkdir -p "$HOME/Documents"
-    run mkdir -p "$HOME/Downloads"
-
-    run mkdir -p "$HOME/Pictures"
-    run mkdir -p "$HOME/Pictures/Screenshot"
-    
-    run mkdir -p "$HOME/Playlists"
-
-    run mkdir -p "$HOME/Videos"
-    run mkdir -p "$HOME/Videos/Wallpaper"
-
-    run mkdir -p "$HOME/File"
-    run mkdir -p "$HOME/File/Code"
-    run mkdir -p "$HOME/File/Temp"
-    
-    run mkdir -p "$HOME/File/Software"
-    run mkdir -p "$HOME/File/Software/App"
-    run mkdir -p "$HOME/File/Software/Game"
-    run mkdir -p "$HOME/File/Software/Storage/HDD/hddex"
-    run mkdir -p "$HOME/File/Software/Storage/NetworkStorage/SFTP"
-    run mkdir -p "$HOME/File/Software/Storage/temphdd"
+    run chmod +x "$ROOT_DIR/external/DirmdsLab/Script/linux/setup/storage-tree.sh"
+    run "$ROOT_DIR/external/DirmdsLab/Script/linux/setup/storage-tree.sh" internal "$HOME"
 
     # .local
     run cp -r "$ROOT_DIR/user/.local" "$HOME/"
