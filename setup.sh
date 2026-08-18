@@ -152,6 +152,7 @@ first_setup_only() {
 
     # clone 
     # external repo
+    
     log "clone external repo"
     
     # DirmdsLab Repo
@@ -160,6 +161,7 @@ first_setup_only() {
     clone_if_missing() {
         local repo_url="$1"
         local repo_dir="$2"
+        shift 2
     
         if [[ -d "$repo_dir/.git" ]]; then
             log "skip: $repo_dir already exists"
@@ -171,7 +173,7 @@ first_setup_only() {
             return 0
         fi
     
-        run git clone "$repo_url" "$repo_dir"
+        run git clone "$@" "$repo_url" "$repo_dir"
     }
     
     # Art
@@ -188,10 +190,18 @@ first_setup_only() {
     clone_if_missing \
         "https://github.com/DirmdsLab/Hyprland.git" \
         "$ROOT_DIR/external/DirmdsLab/Hyprland"
-
+    
+    # mpv-setup
     clone_if_missing \
         "https://github.com/DirmdsLab/mpv-setup.git" \
         "$ROOT_DIR/external/DirmdsLab/mpv-setup"
+    
+    # catppuccin-tmux
+    clone_if_missing \
+        "https://github.com/DirmdsLab/catppuccin-tmux.git" \
+        "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" \
+        -b v2.3.0
+    
 
     log "=== FIRST SETUP TASKS START ==="
 
@@ -205,9 +215,7 @@ first_setup_only() {
     # Tmux
     run rm -rf "$HOME/.config/tmux"
     run mkdir -p "$HOME/.config/tmux/plugins/catppuccin/"
-    run rm -rf "$ROOT_DIR/external/tmux/tmux-main"
-    run 7z x "$ROOT_DIR/external/tmux/catppuccin-tmux.zip" -o"$ROOT_DIR/external/tmux/" -aoa
-    run mv "$ROOT_DIR/external/tmux/tmux-main" "$HOME/.config/tmux/plugins/catppuccin/tmux"
+    run cp -r "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" "$HOME/.config/tmux/plugins/catppuccin/tmux"
 
     # themes
 
