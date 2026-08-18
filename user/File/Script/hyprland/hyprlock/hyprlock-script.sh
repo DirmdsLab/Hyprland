@@ -91,7 +91,7 @@ echo '{ "command": ["set_property", "saturation", 70] }' | socat - /tmp/mpvlock-
 sleep 0.5
 
 kitty --class kitty-overlay \
-  --config "$HOME/File/Script/kitty/kitty-log.conf" \
+  --config "$HOME/File/Software/App/kitty/kitty-log.conf" \
   -e sh -c '
     sleep 1
     logfile="/tmp/lockscreenstyle.log"
@@ -116,7 +116,7 @@ hyprctl dispatch 'hl.dsp.focus({ window = "class:kitty-overlay" })'
 sleep 0.5
 
 if [ "$NO_AUDIO_VISUAL" != true ]; then
-    kitty --class kitty-audio --config "$HOME/File/Script/kitty/kitty-transparant.conf" -e cava -p "$HOME/File/Software/App/cava/kitty-audio-config" &
+    kitty --class kitty-audio --config "$HOME/File/Software/App/kitty/kitty-transparant.conf" -e cava -p "$HOME/File/Software/App/cava/kitty-audio-config" &
     KITTY_AUDIO_PID=$!
 fi
 

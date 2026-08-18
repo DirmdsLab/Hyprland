@@ -13,7 +13,7 @@ echo "[INFO] $(date "+%F %T") Starting hyprlock..." >> "$LOG"
 # Record lock start time
 LOCK_START=$(date +%s)
 
-hyprlock --config ~/File/Script/hyprland/hyprlock/hyprlock-idle.conf >>"$LOG" 2>&1
+hyprlock --config ~/File/Software/App/hyprland/hyprlock/hyprlock-idle.conf >>"$LOG" 2>&1
 STATUS=$?
 
 # Calculate lock duration

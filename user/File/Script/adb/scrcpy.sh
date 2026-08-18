@@ -5,7 +5,6 @@
         alias ADBconnect="~/File/Script/adb/adbconnect.sh"
         alias TCPconnect="~/File/Script/adb/tcp.sh"
         alias scrmore="bash ~/File/Script/adb/scrcpymore.sh"
-        alias ForwardTab8030='echo -e "1\n0\n0\n8030" | TCPconnect'
 
         set_color -o cyan; echo "Available Apps"; set_color normal
         echo -n " • "; set_color yellow; echo "Scrcpy"; set_color normal

@@ -15,8 +15,7 @@ VIDEO="$1"
 # ==========================
 # Direktori script
 # ==========================
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-CAVA_CONFIG="$SCRIPT_DIR/cava-anime.conf"
+CAVA_CONFIG="$HOME/File/Software/App/cava/cava-anime.conf"
 
 if [ ! -f "$CAVA_CONFIG" ]; then
     echo "Config cava tidak ditemukan:"
