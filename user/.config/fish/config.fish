@@ -14,7 +14,6 @@ if status is-interactive
 
     # Script
     alias Script-Files='cd ~/File/Script; eza -T'
-    alias Random-Script='cd ~/File/Script/random; eza -T'
 
     # Bios
     alias SystemRebootToBios='systemctl reboot --firmware-setup'
@@ -253,8 +252,8 @@ if status is-interactive
         ydotool type "$argv"
     end
 
-    alias key-input='~/File/Script/random/key.sh'
-
+    alias key-input='~/File/Script/ydotool/key.sh'
+    
     # Trans
     function instan-trans
         if test (count $argv) -lt 2

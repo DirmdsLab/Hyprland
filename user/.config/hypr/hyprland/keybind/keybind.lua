@@ -146,7 +146,7 @@ hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 
 -- Transparant
 hl.bind(mainMod .. " + SHIFT + T",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/workspacetransparant.sh"))
+    hl.dsp.exec_cmd("~/File/Script/hyprland/workspace/workspacetransparant.sh"))
 
 
 -- U keybind
@@ -166,7 +166,7 @@ hl.bind(mainMod .. " + SHIFT + W", hl.dsp.window.move({ workspace = "empty" }))
 
 -- list workspace
 hl.bind(mainMod .. " + CTRL + W",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/listworkspace.sh"))
+    hl.dsp.exec_cmd("~/File/Script/hyprland/workspace/listworkspace.sh"))
 
 -- X keybind
 -- Float
