@@ -1,60 +1,120 @@
--- Keybind
+-- ╭─────────────────────────────╮
+-- │          Keybind            │
+-- ╰─────────────────────────────╯
 
 -- Super Key
-local mainMod    = "SUPER"
+local mainMod                       = "SUPER"
 
--- App 
-local terminal    = "kitty"
-local fileManager = "thunar"
-local browser     = "firefox"
+-- Terminal 
+local terminal                      = "kitty"
 
-local lockscreen  = "~/File/Script/hyprland/hyprlock/hyprlock-script.sh"
-local lockidle    = "~/File/Script/hyprland/hyprlock/hyprlock-idle.sh"
+-- File
+local fileManager                   = "thunar"
 
-local menu        = "wofi --show drun --insensitive"
-local code        = "codium"
+-- Browser
+local browser                       = "firefox"
+local browser_shortcut              = "~/File/Script/shortcut/firefox-search.sh"
 
--- A keybind
+-- Lock
+local lockscreen                    = "~/File/Script/hyprland/hyprlock/hyprlock-script.sh"
+local lockidle                      = "~/File/Script/hyprland/hyprlock/hyprlock-idle.sh"
+
+-- Menu
+local menu                          = "wofi --show drun --insensitive"
+
+-- Code
+local code                          = "codium"
 
 -- Vol
-hl.bind(mainMod .. " + A",        hl.dsp.exec_cmd("~/File/Script/audio/vol.sh up"))
-hl.bind(mainMod .. " + CTRL + A", hl.dsp.exec_cmd("~/File/Script/audio/vol.sh down"))
-hl.bind(mainMod .. " + SHIFT + A",hl.dsp.exec_cmd("~/File/Script/audio/vol.sh mute"))
+local volup                         = "~/File/Script/audio/vol.sh up"
+local voldown                       = "~/File/Script/audio/vol.sh down"
+local volmute                       = "~/File/Script/audio/vol.sh mute"
+
+-- Mpvpaper
+local mpvpaper                      = "~/File/Script/mpvpaper/mpvpaper.sh"
+
+local mpvpaper_next                 = [[sh -c 'echo "{ \"command\": [\"playlist-next\"] }" | socat - /tmp/mpv-socket']]
+local mpvpaper_prev                 = [[sh -c 'echo "{ \"command\": [\"playlist-prev\"] }" | socat - /tmp/mpv-socket']]
+local mpvpaper_color                = [[sh -c 'echo "{ \"command\": [\"set_property\", \"saturation\", 70] }" | socat - /tmp/mpv-socket']]
+local mpvpaper_reset                = [[sh -c 'echo "{ \"command\": [\"set_property\", \"saturation\", 0] }" | socat - /tmp/mpv-socket']]
+
+local mpvpaper_menu                 = "~/File/Script/mpvpaper/mpvpaper-menu.sh"
+
+-- Screenshot
+local screenshot                    = "~/File/Script/screenshot/ss.sh fullss"
+local screenshot_area               = "~/File/Script/screenshot/ss.sh cropss"
+
+-- Workspace
+local workspace_tran                = "~/File/Script/hyprland/workspace/workspacetransparant.sh"
+local workspace_list                = "~/File/Script/hyprland/workspace/listworkspace.sh"
+
+local workspace_zoom_reset          = "~/File/Script/hyprland/zoom/zoom-workspace.sh zoomreset"
+local workspace_zoom_in             = "~/File/Script/hyprland/zoom/zoom-workspace.sh zoomin"
+local workspace_zoom_out            = "~/File/Script/hyprland/zoom/zoom-workspace.sh zoomout"
+
+-- Clipboard
+local clipboard                     = "~/File/Script/clipboard/clip.sh"
+
+-- Task Manager
+local taskmanager                   = "~/File/Script/hyprland/taskmanager/taskmanager.sh"
 
 
--- B keybind
 
 
--- C keybind
+
+-- | A keybind |
+-- Vol
+hl.bind(mainMod .. " + A",        hl.dsp.exec_cmd(volup))
+hl.bind(mainMod .. " + CTRL + A", hl.dsp.exec_cmd(voldown))
+hl.bind(mainMod .. " + SHIFT + A",hl.dsp.exec_cmd(volmute))
+
+
+
+
+
+-- | B keybind |
+
+
+
+
+
+-- | C keybind |
 -- codium
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(code))
 
--- D keybind
 
+
+
+
+-- | D keybind |
 -- Special workspace
 hl.bind(mainMod .. " + D", hl.dsp.workspace.toggle_special("Hmph"))
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.window.move({ workspace = "special:Hmph" }))
 
 -- MPVPaper (Wallpaper)
 hl.bind(mainMod .. " + CTRL + SHIFT + D",
-    hl.dsp.exec_cmd("~/File/Script/mpvpaper/mpvpaper.sh"))
+    hl.dsp.exec_cmd(mpvpaper))
 
 hl.bind("CTRL + ALT + D",
-    hl.dsp.exec_cmd([[sh -c 'echo "{ \"command\": [\"playlist-next\"] }" | socat - /tmp/mpv-socket']]))
+    hl.dsp.exec_cmd(mpvpaper_next))
 
 hl.bind("CTRL + ALT + A",
-    hl.dsp.exec_cmd([[sh -c 'echo "{ \"command\": [\"playlist-prev\"] }" | socat - /tmp/mpv-socket']]))
+    hl.dsp.exec_cmd(mpvpaper_prev))
 
 hl.bind("CTRL + ALT + S",
-    hl.dsp.exec_cmd([[sh -c 'echo "{ \"command\": [\"set_property\", \"saturation\", 70] }" | socat - /tmp/mpv-socket']]))
+    hl.dsp.exec_cmd(mpvpaper_color))
 
 hl.bind("CTRL + ALT + W",
-    hl.dsp.exec_cmd([[sh -c 'echo "{ \"command\": [\"set_property\", \"saturation\", 0] }" | socat - /tmp/mpv-socket']]))
+    hl.dsp.exec_cmd(mpvpaper_reset))
 
 hl.bind(mainMod .. " + CTRL + D",
-    hl.dsp.exec_cmd("~/File/Script/mpvpaper/mpvpaper-menu.sh"))
+    hl.dsp.exec_cmd(mpvpaper_menu))
 
--- E keybind
+
+
+
+
+-- | E keybind |
 
 -- File Manager
 hl.bind(mainMod .. " + CTRL + E", hl.dsp.exec_cmd(fileManager))
@@ -64,8 +124,10 @@ hl.bind(mainMod .. " + E", hl.dsp.workspace.toggle_special("UwU"))
 hl.bind(mainMod .. " + SHIFT + E", hl.dsp.window.move({ workspace = "special:UwU" }))
 
 
--- F keybind
 
+
+
+-- | F keybind |
 -- Fullscreen
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen())
 
@@ -74,50 +136,90 @@ hl.bind(mainMod .. " + CTRL + F",
     hl.dsp.exec_cmd(browser))
 
 hl.bind(mainMod .. " + CTRL + SHIFT + F",
-    hl.dsp.exec_cmd("~/File/Script/shortcut/firefox-search.sh"))
-
--- G keybind
+    hl.dsp.exec_cmd(browser_shortcut))
 
 
--- H keybind
 
 
--- I keybind
+
+-- | G keybind |
 
 
--- J keybind
 
 
--- K keybind
 
--- Temp
+
+-- | H keybind |
+
+
+
+
+
+-- | I keybind |
+
+
+
+
+
+-- | J keybind |
+
+
+
+
+
+
+-- | K keybind |
+-- TEMP Tablet
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
 hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
--- L keybind
 
+
+
+
+
+-- | L keybind |
 -- Lockscreen
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(lockscreen))
 hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd(lockidle))
 
--- M keybind
 
 
--- N keybind
 
 
--- O keybind
+
+-- | M keybind |
 
 
--- P keybind
 
 
--- Q keybind
 
--- Clone Window
+-- | N keybind |
+
+
+
+
+
+-- | O keybind |
+
+
+
+
+
+-- | P keybind |
+
+
+
+
+
+-- | Q keybind |
+-- Close Window
 hl.bind(mainMod .. " + CTRL + Q", hl.dsp.window.close())
 
--- R keybind
 
+
+
+
+-- | R keybind |
 -- Menu
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 
@@ -126,49 +228,67 @@ hl.bind(mainMod .. " + CTRL + R", function()
     hl.dispatch(hl.dsp.exec_cmd(menu))
 end)
 
--- S keybind
 
+
+
+
+
+-- | S keybind |
 -- Special workspace (magic)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Screenshot
 hl.bind(mainMod .. " + CTRL + SHIFT + S",
-    hl.dsp.exec_cmd("~/File/Script/screenshot/ss.sh fullss"))
+    hl.dsp.exec_cmd(screenshot))
 
 hl.bind(mainMod .. " + CTRL + S",
-    hl.dsp.exec_cmd("~/File/Script/screenshot/ss.sh cropss"))
+    hl.dsp.exec_cmd(screenshot_area))
 
--- T keybind
 
+
+
+
+-- | T keybind |
 -- Terminal
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(terminal))
 
 -- Transparant
 hl.bind(mainMod .. " + SHIFT + T",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/workspace/workspacetransparant.sh"))
+    hl.dsp.exec_cmd(workspace_tran))
 
 
--- U keybind
 
 
--- V keybind
 
+-- | U keybind |
+
+
+
+
+
+-- | V keybind |
 -- Clipboard
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("~/File/Script/clipboard/clip.sh"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
 
 
--- W keybind
 
+
+
+-- | W keybind |
 -- Empty workspace
 hl.bind(mainMod .. " + W", hl.dsp.focus({ workspace = "empty" }))
 hl.bind(mainMod .. " + SHIFT + W", hl.dsp.window.move({ workspace = "empty" }))
 
 -- list workspace
 hl.bind(mainMod .. " + CTRL + W",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/workspace/listworkspace.sh"))
+    hl.dsp.exec_cmd(workspace_list))
 
--- X keybind
+
+
+
+
+-- | X keybind |
 -- Float
 hl.bind(mainMod .. " + CTRL + X", hl.dsp.window.float({ action = "toggle" }))
 
@@ -177,29 +297,33 @@ hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("temp"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:temp" }))
 
 
--- Y keybind
 
 
--- Z keybind
+
+-- | Y keybind |
 
 
--- Keybind Z
 
+
+
+-- | Z keybind |
 -- Zoom
 hl.bind(mainMod .. " + CTRL + Z",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/zoom/zoom-workspace.sh zoomin"))
+    hl.dsp.exec_cmd(workspace_zoom_in))
 
 hl.bind(mainMod .. " + CTRL + SHIFT + Z",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/zoom/zoom-workspace.sh zoomout"))
+    hl.dsp.exec_cmd(workspace_zoom_out ))
 
-hl.bind(mainMod .. " + CTRL + ALT + Z",
-    hl.dsp.exec_cmd("~/File/Script/hyprland/zoom/zoom-workspace.sh zoomreset"))
+hl.bind(mainMod .. " + Z",
+    hl.dsp.exec_cmd(workspace_zoom_reset ))
 
 
+
+
+
+-- | Special keybind |
 -- Task Manager
-hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd("~/File/Script/hyprland/taskmanager/taskmanager.sh"))
-
-
+hl.bind("CTRL + SHIFT + Escape", hl.dsp.exec_cmd(taskmanager))
 
 -- Arrow
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
@@ -236,8 +360,6 @@ hl.bind("ALT + CTRL + SHIFT + Tab", hl.dsp.focus({ workspace = "e-1" }))
 hl.bind("ALT + Tab", hl.dsp.window.cycle_next({ next = true }))
 hl.bind("ALT + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
 
---------------------------------------------------
 -- WINDOW DRAG / RESIZE
---------------------------------------------------
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
