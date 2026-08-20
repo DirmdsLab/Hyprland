@@ -169,9 +169,7 @@ hl.bind(mainMod .. " + CTRL + SHIFT + F",
 
 
 -- | K keybind |
--- TEMP Tablet
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
-hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
+
 
 
 
@@ -363,3 +361,9 @@ hl.bind("ALT + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
 -- WINDOW DRAG / RESIZE
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
+
+
+-- | TEMPKEYBIND |
+-- TEMP Tablet
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
