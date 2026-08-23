@@ -280,17 +280,27 @@ if status is-interactive
     end
 
     # Cli
+
     function launch_cli_art
         set tty (tty)
         set cols (tput cols)
         set lines (tput lines)
 
+        
         if test "$tty" = "/dev/tty1" -o "$tty" = "/dev/tty2" -o "$tty" = "/dev/tty3"
             ~/Documents/art-cli/cli/user/user.sh
+
+        
         else if test $cols -ge 160; and test $lines -ge 35
             ~/Documents/art-cli/cli/user/start-console.sh
-        else
+
+        
+        else if test $cols -ge 100; and test $lines -ge 20
             fastfetch
+            ~/Documents/art-cli/cli/user/user.sh
+
+        
+        else
             ~/Documents/art-cli/cli/user/user.sh
         end
     end
