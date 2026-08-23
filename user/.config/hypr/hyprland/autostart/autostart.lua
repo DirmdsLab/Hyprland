@@ -15,7 +15,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("wl-paste --type image --watch cliphist store")
 
   -- Mpvpaper
-  hl.exec_cmd("~/File/Script/mpvpaper/mpvpaper.sh playlistplay ~/Playlists/wallpaper.m3u")
+  hl.exec_cmd("~/File/Script/mpvpaper/mpvpaper.sh videoplay ~/Videos/Wallpapers/shina-with-audio.mp4")
   hl.exec_cmd('tmux new-session -d -s paper-pause-session "bash $HOME/File/Script/mpvpaper/auto-pause.sh"')
 
   -- Ydotool
