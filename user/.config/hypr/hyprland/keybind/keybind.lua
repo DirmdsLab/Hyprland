@@ -59,6 +59,8 @@ local clipboard                     = "~/File/Script/clipboard/clip.sh"
 local taskmanager                   = "~/File/Script/hyprland/taskmanager/taskmanager.sh"
 
 
+-- Quickshell
+local qs_shell                      = "~/.config/quickshell/scripts/UwU-shell"
 
 
 
@@ -219,7 +221,7 @@ hl.bind(mainMod .. " + CTRL + Q", hl.dsp.window.close())
 
 -- | R keybind |
 -- Menu
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(menu))
 
 hl.bind(mainMod .. " + CTRL + R", function()
     hl.dispatch(hl.dsp.focus({ workspace = "empty" }))
@@ -314,6 +316,14 @@ hl.bind(mainMod .. " + CTRL + SHIFT + Z",
 
 hl.bind(mainMod .. " + Z",
     hl.dsp.exec_cmd(workspace_zoom_reset ))
+
+
+
+
+
+-- | Quickshell |
+hl.bind(mainMod .. " + R",
+    hl.dsp.exec_cmd(qs_shell .. " launcher"))
 
 
 
