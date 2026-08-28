@@ -6,6 +6,63 @@ if status is-interactive
     alias ls='eza --icons --group-directories-first -1'
     alias ls-M='eza --icons --group-directories-first -1 -s modified'
    
+    # cp and mv
+
+    function copy
+        if test (count $argv) -eq 0
+            command cp
+            return $status
+        end
+
+        echo "Command: cp" (string escape -- $argv)
+        read -l -P "continue? (y/n) " answer
+
+        switch $answer
+            case y Y yes YES
+                command cp $argv
+            case '*'
+                echo "Cancelled."
+                return 1
+        end
+    end
+
+    function move
+        if test (count $argv) -eq 0
+            command mv
+            return $status
+        end
+
+        echo "Command: mv" (string escape -- $argv)
+        read -l -P "continue? (y/n) " answer
+
+        switch $answer
+            case y Y yes YES
+                command mv $argv
+            case '*'
+                echo "Cancelled."
+                return 1
+        end
+    end
+
+    # remove
+    function remove
+        if test (count $argv) -eq 0
+            command rm
+            return $status
+        end
+    
+        echo "Command: "(string join " " -- rm $argv)
+        read -l -P "continue? (y/n) " answer
+    
+        switch $answer
+            case y Y
+                command rm $argv
+            case '*'
+                echo "Cancelled."
+                return 1
+        end
+    end
+
     # Fish Config
     alias Reload='cd; clear; source ~/.config/fish/config.fish'
     alias Reload-Here='clear; source ~/.config/fish/config.fish'
