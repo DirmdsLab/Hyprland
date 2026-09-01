@@ -191,6 +191,12 @@ first_setup_only() {
         "https://github.com/DirmdsLab/mpv-setup.git" \
         "$ROOT_DIR/external/DirmdsLab/mpv-setup"
 
+    # catppuccin
+    clone_if_missing \
+        "https://github.com/DirmdsLab/catppuccin-tmux.git" \
+        "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" \
+        -b v2.3.0
+
     # catppuccin-tmux
     log "=== FIRST SETUP TASKS START ==="
 
