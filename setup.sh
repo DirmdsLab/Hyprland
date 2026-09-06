@@ -152,7 +152,7 @@ first_setup_only() {
 
     # clone 
     # external repo
-
+    log "=== FIRST SETUP TASKS START ==="
     log "clone external repo"
 
     # DirmdsLab Repo
@@ -196,60 +196,6 @@ first_setup_only() {
         "https://github.com/DirmdsLab/catppuccin-tmux.git" \
         "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" \
         -b v2.3.0
-
-    # catppuccin-tmux
-    log "=== FIRST SETUP TASKS START ==="
-
-    # Home Folder
-    run chmod +x "$ROOT_DIR/external/DirmdsLab/Script/linux/setup/storage-tree.sh"
-    run "$ROOT_DIR/external/DirmdsLab/Script/linux/setup/storage-tree.sh" internal "$HOME"
-
-    # .local
-    run cp -r "$ROOT_DIR/user/.local" "$HOME/"
-
-    # Tmux
-    run rm -rf "$HOME/.config/tmux"
-    run mkdir -p "$HOME/.config/tmux/plugins/catppuccin/"
-    run cp -r "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" "$HOME/.config/tmux/plugins/catppuccin/tmux"
-
-    # themes
-
-    run mkdir -p "$HOME/.themes"
-
-    run rm -rf "$ROOT_DIR/external/themes/gtk/Graphite-Dark-nord"
-    run mkdir -p "$ROOT_DIR/external/themes/gtk/Graphite-Dark-nord"
-    run tar -xf "$ROOT_DIR/external/themes/gtk/Graphite-Dark-nord.tar.xz" -C "$ROOT_DIR/external/themes/gtk/Graphite-Dark-nord"
-    run cp -r "$ROOT_DIR/external/themes/gtk/Graphite-Dark-nord/Graphite-Dark-nord" "$HOME/.themes"
-
-    # Cursor
-    run mkdir -p "$HOME/.icons"
-
-    run rm -rf "$ROOT_DIR/external/themes/cursor/Bibata-Modern-Ice"
-    run mkdir -p "$ROOT_DIR/external/themes/cursor/Bibata-Modern-Ice"
-    run tar -xf "$ROOT_DIR/external/themes/cursor/Bibata-Modern-Ice.tar.xz" -C "$ROOT_DIR/external/themes/cursor/Bibata-Modern-Ice"
-    run cp -r "$ROOT_DIR/external/themes/cursor/Bibata-Modern-Ice/Bibata-Modern-Ice" "$HOME/.icons"
-
-    # Icon
-    run rm -rf "$ROOT_DIR/external/themes/icon/01-Colloid"
-    run mkdir -p "$ROOT_DIR/external/themes/icon/01-Colloid"
-    run tar -xf "$ROOT_DIR/external/themes/icon/01-Colloid.tar.xz" -C "$ROOT_DIR/external/themes/icon/01-Colloid"
-    run cp -r $ROOT_DIR/external/themes/icon/01-Colloid/* "$HOME/.icons"
-
-    # font 
-    run fc-cache -fv
-
-    # To apply themes
-    run echo "Run 'nwg-look' to apply themes"
-
-    log "=== FIRST SETUP TASKS END ==="
-
-    clone_if_missing \
-        "https://github.com/DirmdsLab/catppuccin-tmux.git" \
-        "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" \
-        -b v2.3.0
-
-
-    log "=== FIRST SETUP TASKS START ==="
 
     # Home Folder
     run chmod +x "$ROOT_DIR/external/DirmdsLab/Script/linux/setup/storage-tree.sh"
