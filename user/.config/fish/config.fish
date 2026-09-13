@@ -233,14 +233,14 @@ if status is-interactive
 
     # Float
     function Float-Setup
-        hyprctl dispatch "hl.dsp.workspace.toggle_special('magic')"
+        hyprctl dispatch "hl.dsp.workspace.toggle_special('terminalX')"
 
         # Term1: clock
         kitty --class Term1 sh -c "sleep 2 && peaclock; exec bash" >/dev/null 2>&1 &
         sleep 0.2
 
         # if bug 
-        hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:magic", window = "class:^Term1$" })'
+        hyprctl dispatch 'hl.dsp.window.move({ workspace = "special:terminalX", window = "class:^Term1$" })'
         sleep 0.2
 
         # Term2: cava

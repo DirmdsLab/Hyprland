@@ -177,10 +177,39 @@ hl.window_rule({
     float = true,
 })
 
+hl.workspace_rule({
+    workspace = "special:magic",
+    gaps_in = 0,
+    gaps_out = 0,
+})
+
 hl.window_rule({
-    name = "magic-tile-exceptions",
     match = {
         workspace = "special:magic",
+    },
+    rounding = 0,
+    border_size = 0,
+})
+
+-- terminalX
+hl.workspace_rule({
+    workspace = "special:terminalX",
+    layout = "master",
+})
+
+hl.window_rule({
+    name = "terminalX-float-all",
+    match = {
+        workspace = "special:terminalX",
+    },
+
+    float = true,
+})
+
+hl.window_rule({
+    name = "terminalX-tile-exceptions",
+    match = {
+        workspace = "special:terminalX",
         class = "Term[1-3]", 
     },
     tile = true,
