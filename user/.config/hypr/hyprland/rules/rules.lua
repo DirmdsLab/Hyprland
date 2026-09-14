@@ -177,20 +177,6 @@ hl.window_rule({
     float = true,
 })
 
-hl.workspace_rule({
-    workspace = "special:magic",
-    gaps_in = 0,
-    gaps_out = 0,
-})
-
-hl.window_rule({
-    match = {
-        workspace = "special:magic",
-    },
-    rounding = 0,
-    border_size = 0,
-})
-
 -- terminalX
 hl.workspace_rule({
     workspace = "special:terminalX",
@@ -215,6 +201,61 @@ hl.window_rule({
     tile = true,
 })
 
+-- UwU
+hl.window_rule({
+    name = "UwU-float-all",
+    match = {
+        workspace = "special:UwU",
+    },
+
+    float = true,
+    size = "1280 720",
+})
+
+hl.window_rule({
+    name = "UwU-tile-exceptions",
+    match = {
+        workspace = "special:UwU",
+        class = "thunar", 
+    },
+    tile = true,
+})
+
+
+-- Hmm
+hl.workspace_rule({
+    workspace = "special:Hmm",
+    gaps_in = 0,
+    gaps_out = 0,
+})
+
+hl.window_rule({
+    match = {
+        workspace = "special:Hmm",
+    },
+    rounding = 0,
+    border_size = 0,
+})
+
+-- Music
+hl.window_rule({
+    match = {
+        class = "music-mpv",
+    },
+
+    workspace = "special:Hmm",
+    move = { 100, 100 },
+    size = { 1280, 720 },
+
+})
+
+hl.window_rule({
+    match = {
+        class = "foot-music",
+    },
+
+    workspace = "special:Hmm",
+})
 
 -- kitty-audio
 hl.window_rule({

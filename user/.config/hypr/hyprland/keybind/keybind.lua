@@ -62,7 +62,8 @@ local taskmanager                   = "~/File/Script/hyprland/taskmanager/taskma
 -- Quickshell
 local qs_shell                      = "~/.config/quickshell/scripts/UwU-shell"
 
-
+-- music bar
+local music_bar                     = "foot -c \"$HOME/File/Software/App/foot/foot.ini\" --app-id=foot-music sh -c 'cava -p \"$HOME/File/Software/App/cava/kitty-music-config\"'"
 
 -- | A keybind |
 -- Vol
@@ -82,9 +83,14 @@ hl.bind(mainMod .. " + SHIFT + A",hl.dsp.exec_cmd(volmute))
 
 -- | C keybind |
 -- codium
-hl.bind(mainMod .. " + C", hl.dsp.exec_cmd(code))
+hl.bind(mainMod .. " + CTRL + C", hl.dsp.exec_cmd(code))
 
+-- Special Hmm
+hl.bind(mainMod .. " + C", hl.dsp.workspace.toggle_special("Hmm"))
+hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = "special:Hmm" }))
 
+-- Hmm Music
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(music_bar))
 
 
 
@@ -292,7 +298,7 @@ hl.bind(mainMod .. " + CTRL + W",
 -- Float
 hl.bind(mainMod .. " + CTRL + X", hl.dsp.window.float({ action = "toggle" }))
 
--- Special temp
+-- Special terminal
 hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("terminalX"))
 hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:terminalX" }))
 

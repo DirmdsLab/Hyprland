@@ -104,6 +104,10 @@ always_run() {
     run rm -rf "$HOME/File/Software/App/cava"
     run ln -sf "$ROOT_DIR/user/File/Software/App/cava" "$HOME/File/Software/App/cava"
 
+    # foot-audio
+    run rm -rf "$HOME/File/Software/App/foot"
+    run ln -sf "$ROOT_DIR/user/File/Software/App/foot" "$HOME/File/Software/App/foot"
+
     # mako
     run rm -rf "$HOME/.config/mako"
     run ln -sf "$ROOT_DIR/user/.config/mako" "$HOME/.config/mako"
