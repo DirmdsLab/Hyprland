@@ -345,21 +345,39 @@ hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
 
--- workspace switch 1-20
+-- workspace switch 1-10
 for i = 1, 10 do
     local key = i % 10
 
     hl.bind(mainMod .. " + " .. key,
         hl.dsp.focus({ workspace = i }))
 
+    hl.bind(mainMod .. " + SHIFT + " .. key,
+        hl.dsp.window.move({ workspace = i }))
+end
+
+
+-- workspace switch 11-15
+for i = 1, 5 do
+    local key = i
+
     hl.bind(mainMod .. " + CTRL + " .. key,
         hl.dsp.focus({ workspace = i + 10 }))
 
-    hl.bind(mainMod .. " + SHIFT + " .. key,
-        hl.dsp.window.move({ workspace = i }))
-
     hl.bind(mainMod .. " + CTRL + SHIFT + " .. key,
         hl.dsp.window.move({ workspace = i + 10 }))
+end
+
+
+-- workspace switch 16-20
+for i = 1, 5 do
+    local key = i
+
+    hl.bind(mainMod .. " + ALT + " .. key,
+        hl.dsp.focus({ workspace = i + 15 }))
+
+    hl.bind(mainMod .. " + ALT + SHIFT + " .. key,
+        hl.dsp.window.move({ workspace = i + 15 }))
 end
 
 -- workspace scroll

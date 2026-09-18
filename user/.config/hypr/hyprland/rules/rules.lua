@@ -48,22 +48,65 @@ hl.window_rule({
     border_size = 0,
 })
 
-
 -- workspace 11
 hl.workspace_rule({
     workspace = "11",
-    gaps_in = 0,
-    gaps_out = 0,
+    layout = "dwindle",
 })
 
-hl.window_rule({
-    match = {
-        workspace = "11",
-    },
-    rounding = 0,
-    border_size = 0,
+-- workspace 12
+hl.workspace_rule({
+    workspace = "12",
+    layout = "dwindle",
 })
 
+-- workspace 13
+hl.workspace_rule({
+    workspace = "13",
+    layout = "dwindle",
+})
+
+-- workspace 14
+hl.workspace_rule({
+    workspace = "14",
+    layout = "dwindle",
+})
+
+-- workspace 15
+hl.workspace_rule({
+    workspace = "15",
+    layout = "dwindle",
+})
+
+-- workspace 16
+hl.workspace_rule({
+    workspace = "16",
+    layout = "master",
+})
+
+-- workspace 17
+hl.workspace_rule({
+    workspace = "17",
+    layout = "master",
+})
+
+-- workspace 18
+hl.workspace_rule({
+    workspace = "18",
+    layout = "master",
+})
+
+-- workspace 19
+hl.workspace_rule({
+    workspace = "19",
+    layout = "master",
+})
+
+-- workspace 20
+hl.workspace_rule({
+    workspace = "20",
+    layout = "master",
+})
 
 -- workspace 21 hyprlock
 hl.workspace_rule({
@@ -227,6 +270,17 @@ hl.window_rule({
     match = {
         class = "thunar",
         title = "^Create New Folder.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+hl.window_rule({
+    name = "Thunar-delete-dialog",
+    match = {
+        class = "thunar",
+        title = "^Attention.*",
     },
 
     float = true,
