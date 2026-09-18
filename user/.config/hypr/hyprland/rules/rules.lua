@@ -141,27 +141,6 @@ hl.window_rule({
     fullscreen = true,
 })
 
--- thunar
--- Thunar utama
-hl.window_rule({
-    match = {
-        class = "thunar",
-    },
-
-    no_blur = true,
-    opacity = 0.99,
-})
-
--- Dialog Rename
-hl.window_rule({
-    match = {
-        class = "thunar",
-        title = "^Rename.*",
-    },
-
-    float = true,
-})
-
 -- magic
 hl.workspace_rule({
     workspace = "special:magic",
@@ -221,6 +200,38 @@ hl.window_rule({
     tile = true,
 })
 
+-- thunar
+-- Thunar utama
+hl.window_rule({
+    match = {
+        class = "thunar",
+    },
+
+    no_blur = true,
+    opacity = 0.99,
+})
+
+-- Dialog Rename
+hl.window_rule({
+    match = {
+        class = "thunar",
+        title = "^Rename.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+hl.window_rule({
+    name = "Thunar-create-folder-dialog",
+    match = {
+        class = "thunar",
+        title = "^Create New Folder.*",
+    },
+
+    float = true,
+    center = true,
+})
 
 -- Hmm
 hl.workspace_rule({
