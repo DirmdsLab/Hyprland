@@ -37,7 +37,7 @@ if status is-interactive
 
         switch $answer
             case y Y yes YES
-                command mv $argv
+                command mv -n $argv
             case '*'
                 echo "Cancelled."
                 return 1

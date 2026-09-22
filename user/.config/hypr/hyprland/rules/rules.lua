@@ -287,6 +287,39 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name = "Thunar-empty-dialog",
+    match = {
+        class = "thunar",
+        title = "^Empty Trash.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+hl.window_rule({
+    name = "Thunar-Operation-dialog",
+    match = {
+        class = "thunar",
+        title = "^File Operation Progress.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+hl.window_rule({
+    name = "Thunar-Attention-dialog",
+    match = {
+        class = "thunar",
+        title = "^Attention.*",
+    },
+
+    float = true,
+    center = true,
+})
+
 -- Hmm
 hl.workspace_rule({
     workspace = "special:Hmm",
