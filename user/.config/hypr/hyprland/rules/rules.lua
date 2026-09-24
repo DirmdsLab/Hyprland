@@ -320,6 +320,19 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name = "Thunar-Error-dialog",
+    match = {
+        class = "thunar",
+        title = "^Error.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+
+
 -- Hmm
 hl.workspace_rule({
     workspace = "special:Hmm",
