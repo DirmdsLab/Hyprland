@@ -299,8 +299,8 @@ hl.bind(mainMod .. " + CTRL + W",
 hl.bind(mainMod .. " + CTRL + X", hl.dsp.window.float({ action = "toggle" }))
 
 -- Special terminal
-hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("terminalX"))
-hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:terminalX" }))
+hl.bind(mainMod .. " + X", hl.dsp.workspace.toggle_special("UxU"))
+hl.bind(mainMod .. " + SHIFT + X", hl.dsp.window.move({ workspace = "special:UxU" }))
 
 
 

@@ -199,25 +199,25 @@ hl.window_rule({
     float = true,
 })
 
--- terminalX
+-- Hmph
 hl.workspace_rule({
-    workspace = "special:terminalX",
+    workspace = "special:Hmph",
     layout = "master",
 })
 
 hl.window_rule({
-    name = "terminalX-float-all",
+    name = "Hmph-float-all",
     match = {
-        workspace = "special:terminalX",
+        workspace = "special:Hmph",
     },
 
     float = true,
 })
 
 hl.window_rule({
-    name = "terminalX-tile-exceptions",
+    name = "Hmph-tile-exceptions",
     match = {
-        workspace = "special:terminalX",
+        workspace = "special:Hmph",
         class = "Term[1-3]", 
     },
     tile = true,
@@ -331,7 +331,16 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name = "Thunar-Properties-dialog",
+    match = {
+        class = "thunar",
+        title = "^Properties.*",
+    },
 
+    float = true,
+    center = true,
+})
 
 -- Hmm
 hl.workspace_rule({
