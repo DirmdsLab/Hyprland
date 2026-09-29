@@ -241,7 +241,8 @@ end)
 
 -- | S keybind |
 -- Special workspace (magic)
-hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"))
+hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"), { submap_universal = true } )
+
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Screenshot
@@ -401,3 +402,22 @@ hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 -- TEMP Tablet
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
 hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
+
+hl.define_submap("zoomexa", function()
+
+    hl.bind(
+        "CTRL + 1",
+        hl.dsp.exec_cmd("ydotool key 29:1 42:1 13:1 13:0 42:0 29:0")
+    )
+
+    hl.bind(
+        "CTRL + 2",
+        hl.dsp.exec_cmd("ydotool key 29:1 12:1 12:0 29:0")
+    )
+
+    hl.bind(
+        "ESCAPE",
+        hl.dsp.submap("reset")
+    )
+
+end)
