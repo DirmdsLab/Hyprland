@@ -177,7 +177,9 @@ hl.bind(mainMod .. " + CTRL + SHIFT + F",
 
 
 -- | K keybind |
-
+-- #TEMP Tablet
+hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
+hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
 
 
 
@@ -213,6 +215,8 @@ hl.bind(mainMod .. " + CTRL + L", hl.dsp.exec_cmd(lockidle))
 
 -- | P keybind |
 
+-- #TEMP 
+hl.bind(mainMod .. " + CTRL + SHIFT + P", hl.dsp.exec_cmd("~/File/Script/Temp/booting.sh"))
 
 
 
@@ -397,11 +401,7 @@ hl.bind("ALT + SHIFT + Tab", hl.dsp.window.cycle_next({ next = false }))
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
-
--- | TEMPKEYBIND |
--- TEMP Tablet
-hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh normal"))
-hl.bind(mainMod .. " + CTRL + K", hl.dsp.exec_cmd("~/File/Temp/tablet/lock.sh idle"))
+-- Submap 
 
 hl.define_submap("zoomexa", function()
 
