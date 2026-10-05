@@ -38,8 +38,13 @@
     },
     {
       "type": "disk",
+      "key": "HDD sda2",
+      "folders": "/home/tutturuu/File/Software/Storage/HDD/hddex_sda2"
+    },
+    {
+      "type": "disk",
       "key": "SSD",
-      "folders": "/home/tutturuu/File/Software/Storage/SSD/ssdin"
+      "folders": "/home/tutturuu/File/Software/Storage/SSD/ssdin_nvme0n1p8"
     },
     {
       "type": "disk",

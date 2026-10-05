@@ -187,16 +187,7 @@ hl.window_rule({
 -- magic
 hl.workspace_rule({
     workspace = "special:magic",
-    layout = "master",
-})
-
-hl.window_rule({
-    name = "magic-float-all",
-    match = {
-        workspace = "special:magic",
-    },
-
-    float = true,
+    layout = "scrolling",
 })
 
 -- Hmph

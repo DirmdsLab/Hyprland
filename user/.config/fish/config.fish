@@ -72,6 +72,90 @@ if status is-interactive
     # Script
     alias Script-Files='cd ~/File/Script; eza -T'
 
+    function run_script
+        set -l script $argv[1]
+    
+        if string match -q '\$HOME/*' -- "$script"
+            set script (string replace '\$HOME' "$HOME" -- "$script")
+        else if string match -q '$HOME/*' -- "$script"
+            set script (string replace '$HOME' "$HOME" -- "$script")
+        else if not string match -q '/*' -- "$script"
+            set script "$HOME/File/Script/$script"
+        end
+    
+        if not test -f "$script"
+            echo "Script not found: $script"
+            return 1
+        end
+    
+        "$script" $argv[2..-1]
+    end
+    
+    function __run_script_complete
+        set -l base "$HOME/File/Script"
+        set -l tokens (commandline -opc)
+    
+        if test (count $tokens) -gt 1
+            return
+        end
+    
+        set -l current (commandline -ct)
+    
+        if test -z "$current"
+            for item in $base/*
+                if test -d "$item"
+                    printf '%s/\tDirectory\n' (string replace "$base/" '' -- "$item")
+                end
+            end
+            return
+        end
+    
+        set -l path "$base/$current"
+        set -l dir (dirname "$path")
+    
+        if string match -q '*/' -- "$current"
+            set dir "$path"
+        end
+    
+        if not test -d "$dir"
+            return
+        end
+    
+        for item in $dir/*
+            if test -d "$item"
+                printf '%s/\tDirectory\n' (string replace "$base/" '' -- "$item")
+            else if test -f "$item"
+                if string match -q '*.sh' "$item"
+                    set -l name (string replace "$base/" '' -- "$item")
+                    printf '%s\tScript\n' "$name"
+                end
+            end
+        end
+    end
+    
+    function __run_script_tab
+        set -l line (commandline)
+    
+        if string match -rq '^run_script .+\.sh$' -- "$line"
+            set -l script (string replace -r '^run_script ' '' -- "$line")
+    
+            if string match -q '\$HOME/*' -- "$script"
+                set script (string replace '\$HOME' '$HOME' -- "$script")
+            else if not string match -q '/*' -- "$script"
+                set script "\$HOME/File/Script/$script"
+            end
+    
+            commandline "$script"
+            return
+        end
+    
+        commandline -f complete
+    end
+    
+    complete -c run_script -f -a '(__run_script_complete)'
+    bind \t __run_script_tab
+    
+
     # Bios
     alias SystemRebootToBios='systemctl reboot --firmware-setup'
 
