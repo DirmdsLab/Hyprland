@@ -30,6 +30,7 @@ application/octet-stream=userapp-nano-kitty.sh-PZCYU3.desktop
 text/x-lua=userapp-nano-kitty.sh-C4IBU3.desktop
 text/x-qml=userapp-nano-kitty.sh-C4IBU3.desktop
 application/vnd.ms-publisher=userapp-nano-kitty.sh-PZCYU3.desktop
+application/pdf=userapp-nano-kitty.sh-PZCYU3.desktop
 
 [Added Associations]
 video/webm=mpv.desktop;mpv-tmux.desktop;
@@ -61,8 +62,9 @@ application/xml=userapp-nano-kitty.sh-BX6WR3.desktop;
 application/zip=peazip-extract.desktop;org.gnome.FileRoller.desktop;peazip.desktop;userapp-archive-kitty.sh-YZ47S3.desktop;
 application/x-7z-compressed=userapp-archive-kitty.sh-YZ47S3.desktop;
 application/octet-stream=userapp-nano-kitty.sh-BX6WR3.desktop;org.gnome.Loupe.desktop;userapp-nano-kitty.sh-PZCYU3.desktop;
-video/mp4=anime.desktop;
+video/mp4=userapp-anime.sh-ASPXW3.desktop;userapp-music.sh-XVSEV3.desktop;anime.desktop;
 text/x-lua=userapp-nano-kitty.sh-C4IBU3.desktop;
 text/x-python3=userapp-nano-kitty.sh-C4IBU3.desktop;
 text/x-qml=userapp-nano-kitty.sh-C4IBU3.desktop;
 application/vnd.ms-publisher=userapp-nano-kitty.sh-PZCYU3.desktop;
+application/pdf=userapp-nano-kitty.sh-PZCYU3.desktop;

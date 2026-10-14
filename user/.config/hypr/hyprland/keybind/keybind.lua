@@ -91,7 +91,8 @@ hl.bind(mainMod .. " + SHIFT + C", hl.dsp.window.move({ workspace = "special:Hmm
 
 -- Hmm Music
 hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd(music_bar))
-
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.window.resize({ window = \"class:music-mpv\", x = 1280, y = 720 })'"))
+hl.bind(mainMod .. " + ALT + C", hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.window.move({ window = \"class:music-mpv\", x = 100, y = 100 })'"))
 
 
 -- | D keybind |
@@ -246,7 +247,6 @@ end)
 -- | S keybind |
 -- Special workspace (magic)
 hl.bind(mainMod .. " + S", hl.dsp.workspace.toggle_special("magic"), { submap_universal = true } )
-
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.window.move({ workspace = "special:magic" }))
 
 -- Screenshot

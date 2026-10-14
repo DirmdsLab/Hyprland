@@ -5,7 +5,10 @@ if status is-interactive
     # Better ls
     alias ls='eza --icons --group-directories-first -1'
     alias ls-M='eza --icons --group-directories-first -1 -s modified'
-   
+
+    # Mounting Storage
+    alias MountingStorage='cd $HOME/File/Software/Storage/'
+
     # cp and mv
 
     function copy

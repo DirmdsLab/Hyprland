@@ -1,0 +1,7 @@
+new_tab btop
+launch fish -c 'exec btop'
+
+new_tab nvtop
+launch fish -c 'exec nvtop'
+
+focus_tab 0

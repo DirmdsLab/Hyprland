@@ -333,6 +333,40 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name = "Thunar-Columns-dialog",
+    match = {
+        class = "thunar",
+        title = "^Configure Columns in the Detailed List View.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+hl.window_rule({
+    name = "Thunar-replace-dialog",
+    match = {
+        class = "thunar",
+        title = "^Confirm to replace files.*",
+    },
+
+    float = true,
+    center = true,
+})
+
+
+hl.window_rule({
+    name = "Thunar-Properties-dialog",
+    match = {
+        class = "^thunar$",
+        title = ".*Properties$",
+    },
+
+    float = true,
+    center = true,
+})
+
 -- Hmm
 hl.workspace_rule({
     workspace = "special:Hmm",
@@ -354,7 +388,7 @@ hl.window_rule({
         class = "music-mpv",
     },
 
-    workspace = "special:Hmm",
+    float = true,
     move = { 100, 100 },
     size = { 1280, 720 },
 
@@ -365,7 +399,10 @@ hl.window_rule({
         class = "foot-music",
     },
 
-    workspace = "special:Hmm",
+    float = true,
+    move = { 100, 100 },
+    size = { 1280, 720 },
+
 })
 
 -- kitty-audio
