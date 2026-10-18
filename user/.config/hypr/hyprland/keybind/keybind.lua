@@ -53,7 +53,7 @@ local workspace_zoom_in             = "~/File/Script/hyprland/zoom/zoom-workspac
 local workspace_zoom_out            = "~/File/Script/hyprland/zoom/zoom-workspace.sh zoomout"
 
 -- Clipboard
-local clipboard                     = "~/File/Script/clipboard/clip.sh"
+local clipboard                     = "~/.config/quickshell/scripts/UwU-shell clipboard"
 
 -- Task Manager
 local taskmanager                   = "~/File/Script/hyprland/taskmanager/taskmanager.sh"
@@ -281,10 +281,6 @@ hl.bind(mainMod .. " + SHIFT + T",
 -- | V keybind |
 -- Clipboard
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(clipboard))
-
-
-
-
 
 -- | W keybind |
 -- Empty workspace

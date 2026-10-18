@@ -20,4 +20,8 @@ hl.on("hyprland.start", function ()
 
   -- Ydotool
   hl.exec_cmd("ydotoold")
+
+  -- quickshell
+  hl.exec_cmd("quickshell")
+
 end)
