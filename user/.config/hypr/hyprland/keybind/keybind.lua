@@ -76,6 +76,7 @@ hl.bind(mainMod .. " + SHIFT + A",hl.dsp.exec_cmd(volmute))
 
 
 -- | B keybind |
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(qs_shell .. " quicksettings"))
 
 
 
@@ -232,13 +233,8 @@ hl.bind(mainMod .. " + CTRL + Q", hl.dsp.window.close())
 
 -- | R keybind |
 -- Menu
-hl.bind(mainMod .. " + SHIFT + R", hl.dsp.exec_cmd(menu))
-
-hl.bind(mainMod .. " + CTRL + R", function()
-    hl.dispatch(hl.dsp.focus({ workspace = "empty" }))
-    hl.dispatch(hl.dsp.exec_cmd(menu))
-end)
-
+-- | Quickshell |
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(qs_shell .. " launcher"))
 
 
 
@@ -327,10 +323,6 @@ hl.bind(mainMod .. " + Z",
 
 
 
-
--- | Quickshell |
-hl.bind(mainMod .. " + R",
-    hl.dsp.exec_cmd(qs_shell .. " launcher"))
 
 
 

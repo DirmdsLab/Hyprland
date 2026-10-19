@@ -443,3 +443,18 @@ hl.window_rule({
 
     workspace = 12,
 })
+
+-- quickshell
+
+hl.window_rule({
+    name = "UwU-settings",
+    match = {
+        title = "^UwU Settings$",
+    },
+
+    float = true,
+    center = true,
+    rounding = 20,
+    border_size = 0,
+    no_shadow = true,
+})
