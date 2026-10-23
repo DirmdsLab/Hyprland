@@ -67,4 +67,4 @@ text/x-lua=userapp-nano-kitty.sh-C4IBU3.desktop;
 text/x-python3=userapp-nano-kitty.sh-C4IBU3.desktop;
 text/x-qml=userapp-nano-kitty.sh-C4IBU3.desktop;
 application/vnd.ms-publisher=userapp-nano-kitty.sh-PZCYU3.desktop;
-application/pdf=userapp-nano-kitty.sh-PZCYU3.desktop;
+application/pdf=firefox.desktop;userapp-nano-kitty.sh-PZCYU3.desktop;
