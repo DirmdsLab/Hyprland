@@ -128,7 +128,7 @@ always_run() {
 
     # quickshell
     run rm -rf "$HOME/.config/quickshell"
-    run ln -sf "$ROOT_DIR/user/.config/quickshell" "$HOME/.config/quickshell"
+    run ln -sf "$ROOT_DIR/external/DirmdsLab/quickshell" "$HOME/.config/quickshell"
 
     # wofi
     run rm -rf "$HOME/.config/wofi"
@@ -200,6 +200,11 @@ first_setup_only() {
         "https://github.com/DirmdsLab/catppuccin-tmux.git" \
         "$ROOT_DIR/external/DirmdsLab/catppuccin-tmux" \
         -b v2.3.0
+
+    # quickshell
+    clone_if_missing \
+        "https://github.com/DirmdsLab/quickshell.git" \
+        "$ROOT_DIR/external/DirmdsLab/quickshell"
 
     # Home Folder
     run chmod +x "$ROOT_DIR/external/DirmdsLab/Script/linux/setup/storage-tree.sh"
