@@ -24,4 +24,7 @@ hl.on("hyprland.start", function ()
   -- quickshell
   hl.exec_cmd("quickshell")
 
+  -- tablet driver
+  hl.exec_cmd("systemctl --user start opentabletdriver.service")
+
 end)
