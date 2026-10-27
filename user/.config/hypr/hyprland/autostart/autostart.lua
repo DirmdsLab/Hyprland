@@ -27,4 +27,7 @@ hl.on("hyprland.start", function ()
   -- tablet driver
   hl.exec_cmd("systemctl --user start opentabletdriver.service")
 
+  -- sunshine
+  hl.exec_cmd("systemctl --user start sunshine.service")
+
 end)
