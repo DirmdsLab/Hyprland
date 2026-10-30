@@ -33,6 +33,15 @@ hl.window_rule({
     float = true,
 })
 
+-- Workspace 2
+hl.workspace_rule({
+    workspace = "2",
+    layout = "scrolling",
+    layout_opts = {
+        direction = "down",
+    },
+})
+
 -- workspace 10
 hl.workspace_rule({
     workspace = "10",
@@ -184,10 +193,13 @@ hl.window_rule({
     fullscreen = true,
 })
 
--- magic
+-- Magic workspace
 hl.workspace_rule({
     workspace = "special:magic",
     layout = "scrolling",
+    layout_opts = {
+        direction = "down",
+    },
 })
 
 -- Hmph
