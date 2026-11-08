@@ -385,6 +385,48 @@ if status is-interactive
     	rm -f -- "$tmp"
     end
     
+    # write sha
+
+    
+    function writesha256
+        if test (count $argv) -ne 1
+            echo "Usage: writesha256 <file>"
+            return 1
+        end
+    
+        set -l file $argv[1]
+    
+        if not test -f "$file"
+            echo "Error: File not found: $file"
+            return 1
+        end
+    
+        set -l output "$file.sha256"
+    
+        if test -e "$output"
+            echo "Error: Checksum file already exists: $output"
+            echo "Operation cancelled. Existing file was not modified."
+            return 1
+        end
+    
+        if not sha256sum "$file" > "$output"
+            echo "Error: Failed to generate SHA256 checksum."
+            return 1
+        end
+    
+        echo ""
+        echo "SHA256 checksum successfully created!"
+        echo ""
+    
+        echo "=== SHA256 ==="
+        sha256sum "$file"
+    
+        echo ""
+        echo "=== Checksum File Contents ==="
+        cat "$output"
+    end
+
+
     # ydotool
     function key-type
         if test (count $argv) -eq 0
